@@ -64,6 +64,6 @@ This repo contains a barebones Node/Typescript/Express app with a Postgres datab
 
 You can use `npm run test` to run unit tests via `vitest` if you need. An example test stub has been provided.
 
-### Submitting your completed project
+### When you're finished (or after you've spent two hours on it)
 
-Please push your completed work to a new repo on Github or Gitlab or wherever, and send us a link. We'll schedule an hour meeting where we go over your solution together.
+Give us access to your cloned repo for us to review, like by publishing it as a public Github or Gitlab repo. We'll then schedule a one hour review meeting with you. In this meeting, we'll cover about what you did, any problems you ran into, how you overcame those problems, and ask questions about your approach.
