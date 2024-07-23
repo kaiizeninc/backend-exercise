@@ -8,7 +8,7 @@ This is a Node/Typescript/Express exercise for backend roles at Kaiizen. It shou
 
 You own and operate Greasy Wheel, a mediocre pizza delivery company. Greasy Wheel employs three drivers (Fry, Bender, and Leela), each of whom deliver pizzas via car to your customers.
 
-Each employee starts their day at your central pizza kitchen in downtown Chicago, and loads up their car with enough pizzas to make all of their deliveries for the day. Then, they visit each delivery location one after another. Then, they return to the pizza kitchen to drop off the remaining pizzas to use for deliveries the next day (it's a _very_ mediocre pizza company).
+Each employee starts their day at your central pizza kitchen in downtown Chicago and loads up their car with enough pizzas to make all of their deliveries for the day. Then, they visit each delivery location one after another. Then, they return to the pizza kitchen to drop off the remaining pizzas to use for deliveries the next day (it's a _very_ mediocre pizza company).
 
 ### Problem
 
@@ -18,15 +18,15 @@ Additionally, the Pizza Delivery Drivers Union has negotiated that drivers canno
 
 ### Formal requirements
 
-* **A "dashboard" interface** with a table listing all deliveries made by all drivers across all days. This should include the date of each delivery, which driver made it, and the lat/lng of the delivery.
+* **A "dashboard" interface** with a table listing all deliveries made by all drivers across all days. This should include the date/time of each delivery, which driver made it, and the lat/lng of the delivery.
 * **A "new delivery" interface** that lets you create a delivery.
     * This should have the following fields:
-        * Date of delivery
+        * Date and time of delivery. Doesn't need to be pretty; e.g. an ISO8601 string is fine.
         * Driver (Fry, Bender, or Leela). It's fine to hardcode these driver names for this exercise.
         * Delivery location (lat/lng). You can use a map to set this, but it's not required. A Google Maps API key and example embed code is provided in the repo if you need.
-    * If the form is submitted with a delivery that would cause the driver to exceed their miles, then an error should be shown and the delivery should not be created.
+    * If the form is submitted with a delivery that would cause the driver to exceed their miles for that day, then an error should be shown and the delivery should not be created.
 * **A "driver report" interface** with a table showing one row for each driver-day, where each row has the following fields:
-    * Date
+    * Date and time of delivery
     * Driver name
     * Number of deliveries
     * Distance driven
@@ -35,7 +35,7 @@ Additionally, the Pizza Delivery Drivers Union has negotiated that drivers canno
 
 The kitchen's location is `{ lat: 41.8781, lng: -87.6298 }`.
 
-#### If it'll take more than 2 hours
+#### Taking longer?
 
 This is not designed to take all day; feel free to stop at the two hour mark if you're not finished with the requirements. The main parts that we want to at least see are:
 * The database structure
@@ -45,19 +45,22 @@ This is not designed to take all day; feel free to stop at the two hour mark if 
 
 * **Security.** You do not need any sort of authorization or authentication mechanism.
 * **UI/UX.** You can have an ugly UI (like default browser styles), and it can have a weird user experience as long as it satisfies the requirements.
-* **Sticking to the repo exactly.** Feel free to deviate from the structure or plumbing provided, and be prepared to explain your reasoning. As long you use Postgres, Node, and Typescript, nothing else matters.
-* **Automated tests.** Feel free to write unit tests if they're helpful, but they're not necessary for this exercise.
+* **Sticking to the repo exactly.** Feel free to deviate from the structure or plumbing provided, but be prepared to explain your reasoning. However, Postgres, Node, and Typescript are requirements.
+* **Automated tests.** Unit tests might be helpful for the exercise, but they're not required.
+* **Timezones.** You can assume that everything happens in the same timezone. UTC is fine.
+* **Coordinate systems, projections, and transformations.** Don't sweat making it perfectly accurate. If needed, assume that all geospatial calculations use WGS84.
 
 ### Getting started
 
 This repo contains a barebones Node/Typescript/Express app with a Postgres database attached. To get started:
 
-1. Clone this repo to your machine.
-2. Run `docker-compose up` in the root of the repo in one terminal. This will bring up a Postgres database server with PostGIS installed. You can use PostGIS geospatial features if they're helpful, but it's not required.
-3. In another terminal window, run `npm run start`. The server will auto-reload when you make changes.
-4. Run `npm run migrate` to execute the `scripts/migrate.ts` file. This can be used to quickly create your database tables, but it's not required.
-5. Open [http://127.0.0.1:3000] in your browser.
-6. Edit the application code and refresh your browser to see the changes.
+1. Make sure you have Docker Desktop, `npm`, and Node.js installed.
+2. Clone this repo to your machine.
+3. Run `docker-compose up` in the root of the repo in one terminal. This will bring up a Postgres database server with PostGIS installed. You can use PostGIS geospatial features if they're helpful, but it's not required.
+4. In another terminal window, run `npm run start`. The server will auto-reload when you make changes.
+5. Run `npm run migrate` to execute the `scripts/migrate.ts` file. This can be used to quickly create your database tables, but it's not required.
+6. Open [http://127.0.0.1:3000] in your browser.
+7. Edit the application code and refresh your browser to see the changes.
 
 You can use `npm run test` to run unit tests via `vitest` if you need. An example test stub has been provided.
 
