@@ -3,7 +3,11 @@ import { Client } from "pg";
 import { registerRoutes } from "./routes";
 
 /**
- * A simple 
+ * The entry point for the backend server. This connects to the database,
+ * provides that connection to each route, and exposes an Express HTTP server on
+ * port 3000.
+ * 
+ * See the `routes.ts` file for routes.
  */
 (async () => {
   const db = new Client("postgres://postgres:postgres@localhost:5432/postgres");

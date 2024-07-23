@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "tsx src/migrate.ts",
+    "test": "vitest",
+    "migrate": "tsx scripts/migrate.ts",
     "start": "tsx watch src/server.ts"
   },
   "author": "",
