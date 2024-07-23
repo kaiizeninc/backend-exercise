@@ -50,7 +50,7 @@ This is not designed to take all day; feel free to stop at the two hour mark if 
 * **Timezones.** You can assume that everything happens in the same timezone. UTC is fine.
 * **Coordinate systems, projections, and transformations.** Don't sweat making it perfectly accurate. If needed, assume that all geospatial calculations use WGS84.
 
-### Getting started
+## Getting started
 
 This repo contains a barebones Node/Typescript/Express app with a Postgres database attached. To get started:
 
@@ -64,6 +64,6 @@ This repo contains a barebones Node/Typescript/Express app with a Postgres datab
 
 You can use `npm run test` to run unit tests via `vitest` if you need. An example test stub has been provided.
 
-### When you're finished (or after you've spent two hours on it)
+## When you're finished (or after you've spent two hours on it)
 
 Give us access to your cloned repo for us to review, like by publishing it as a public Github or Gitlab repo. We'll then schedule a one hour review meeting with you. In this meeting, we'll cover about what you did, any problems you ran into, how you overcame those problems, and ask questions about your approach.
