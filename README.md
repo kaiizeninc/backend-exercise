@@ -50,11 +50,12 @@ This repo contains a barebones Node/Typescript/Express app with a Postgres datab
 
 1. Make sure you have Docker Desktop, `npm`, and Node.js installed.
 2. Clone this repo to your machine.
-3. Run `docker-compose up` in the root of the repo in one terminal. This will bring up a Postgres database server with PostGIS installed. You can use PostGIS geospatial features if they're helpful, but it's not required.
-4. In another terminal window, run `npm run start`. The server will auto-reload when you make changes.
-5. Run `npm run migrate` to execute the `scripts/migrate.ts` file. This can be used to quickly create your database tables, but it's not required.
-6. Open [http://127.0.0.1:3000] in your browser.
-7. Edit the application code and refresh your browser to see the changes.
+3. Install project dependencies with `npm install`.
+4. Run `docker-compose up` in the root of the repo in one terminal. This will bring up a Postgres database server with PostGIS installed. You can use PostGIS geospatial features if they're helpful, but it's not required.
+5. In another terminal window, run `npm run start`. The server will auto-reload when you make changes.
+6. Run `npm run migrate` to execute the `scripts/migrate.ts` file. This can be used to quickly create your database tables, but it's not required.
+7. Open [http://127.0.0.1:3000] in your browser.
+8. Edit the application code and refresh your browser to see the changes.
 
 You can use `npm run test` to run unit tests via `vitest` if you need. An example test stub has been provided.
 
