@@ -30,16 +30,10 @@ Additionally, the Pizza Delivery Drivers Union has negotiated that drivers canno
     * Driver name
     * Number of deliveries
     * Distance driven
-* The distance driven for a driver each day is calculated using the euclidean distance ("as the crow flies") between points. Driven miles are tracked starting from when the driver leaves the pizza kitchen, and stop accruing once they arrive back at the kitchen at the end of the day.
+* The distance driven for a driver each day is calculated using the euclidean distance ("as the crow flies") between points. Driven miles are tracked starting from when the driver leaves the pizza kitchen, through each delivery stop in chronological order, and then stop accruing once the driver arrives back at the kitchen at the end of their day.
 * You must use Postgres, Node, and Typescript.
 
 The kitchen's location is `{ lat: 41.8781, lng: -87.6298 }`.
-
-#### Taking longer?
-
-This is not designed to take all day; feel free to stop at the two hour mark if you're not finished with the requirements. The main parts that we want to at least see are:
-* The database structure
-* The algorithm to calculate distance per day, and how that's implemented
 
 ### Out of scope
 
@@ -64,6 +58,10 @@ This repo contains a barebones Node/Typescript/Express app with a Postgres datab
 
 You can use `npm run test` to run unit tests via `vitest` if you need. An example test stub has been provided.
 
-## When you're finished (or after you've spent two hours on it)
+## When you're finished (or after two hours)
 
-Give us access to your cloned repo for us to review, like by publishing it as a public Github or Gitlab repo. We'll then schedule a one hour review meeting with you. In this meeting, we'll cover about what you did, any problems you ran into, how you overcame those problems, and ask questions about your approach.
+This is not designed to take all day; feel free to stop at the two hour mark even if you're not finished with every requirement. Make sure you at least solidly cover:
+* The database structure
+* How you are calculating and enforcing the miles/day restriction
+
+When you've reached a stopping point, give us access to your cloned repo for us to review, like by publishing it as a public Github or Gitlab repo. We'll then schedule a one hour review meeting with you. In this meeting, we'll cover about what you did, any problems you ran into, how you overcame those problems, and ask questions about your approach.
